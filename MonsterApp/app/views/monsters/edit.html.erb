@@ -1,0 +1,12 @@
+<h1>Edit Monster Detail</h1>
+
+<%= form_for @monster, :url => {:action => 'update', :id => @monster} do |m| %>
+
+<p>Name : <%= m.text_field 'name' %></p>
+<p>Power : <%= m.text_field 'power' %></p>
+<p>Type : <%= m.collection_select :monstertype_id, MonsterType.all, :id, :name %></p>
+
+<%= m.submit 'Save Changes' %>
+<% end %>
+
+<%= link_to 'Back to the list...', {:action => 'list' } %>

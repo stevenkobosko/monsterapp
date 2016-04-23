@@ -1,0 +1,16 @@
+<h1> Add new Monster </h1>
+
+<%= form_tag :action => 'create' do %>
+	<p><label for = "monster_name">Name</label>:
+	<%= text_field 'monsters', 'name' %></p>
+
+	<p><label for = "monster_power">Power</label>:
+	<%= text_field 'monsters', 'power' %></p>
+
+	<p><label for = "monster_mtype">Type</label>:
+	<%= collection_select(:monsters, :monstertype_id, @monstertypes, :id, :name, prompt: true) %></p>
+
+	<%= submit_tag 'Create' %>
+<% end -%>
+
+<%= link_to 'Back to the list...', {:action => 'list'} %>

@@ -1,0 +1,11 @@
+<h1><%= @monster.name %></h1>
+
+<p>
+	<strong>Name: </strong> <%= @monster.name %><br/>
+	<strong>Power: </strong> <%= @monster.power %><br/>
+	<strong>Type: </strong> <%= MonsterType.find(@monster.monstertype_id).name %><br/>
+</p>
+
+<hr />
+
+<%= link_to 'Back to the list...', {:action => 'list'} %>
